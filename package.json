@@ -13,7 +13,7 @@
       "require": "./dist/index.cjs"
     }
   },
-  "files": ["dist", "README.md"],
+  "files": ["dist", "README.md", "SECURITY.md", "STORAGE.md", "AGENTS.md", "SKILL.md"],
   "scripts": {
     "build": "tsup src/index.ts --format esm,cjs --dts",
     "lint": "tsc --noEmit"
