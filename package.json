@@ -1,0 +1,39 @@
+{
+  "name": "@markpdf/react-native",
+  "version": "0.1.0",
+  "description": "React Native SDK for the markpdf API (Expo and bare RN)",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "files": ["dist", "README.md"],
+  "scripts": {
+    "build": "tsup src/index.ts --format esm,cjs --dts",
+    "lint": "tsc --noEmit"
+  },
+  "keywords": ["pdf", "markdown", "react-native", "expo"],
+  "license": "MIT",
+  "homepage": "https://markpdf.tech",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/markpdf/markpdf-react-native"
+  },
+  "peerDependencies": {
+    "react": ">=18.0.0",
+    "react-native": ">=0.72.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.0",
+    "react": "^18.2.0",
+    "react-native": "^0.74.0",
+    "tsup": "^8.0.0",
+    "typescript": "^5.4.0"
+  }
+}
