@@ -63,7 +63,7 @@ export function useConvertFile(client: MarkpdfClient) {
         xhr.open("POST", `${client.baseUrl}/convert?${params.toString()}`);
         xhr.setRequestHeader("x-api-key", client.apiKey);
 
-        xhr.upload.onprogress = (event) => {
+        xhr.upload.onprogress = (event: ProgressEvent<EventTarget>) => {
           if (event.lengthComputable) {
             setState((prev) => ({ ...prev, progress: Math.round((event.loaded / event.total) * 100) }));
           }

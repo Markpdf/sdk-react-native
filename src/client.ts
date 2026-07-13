@@ -127,7 +127,7 @@ export class MarkpdfClient {
     if (res.status >= 400) {
       throw errorForStatus(res.status, await res.json().catch(() => ({})));
     }
-    return res.json();
+    return (await res.json()) as Record<string, unknown>;
   }
 
   /** Poll the status of an auto-queued conversion (`GET /jobs/{id}`). */
@@ -136,7 +136,7 @@ export class MarkpdfClient {
     if (res.status >= 400) {
       throw errorForStatus(res.status, await res.json().catch(() => ({})));
     }
-    return res.json();
+    return (await res.json()) as Job;
   }
 
   /** Block until a queued job reaches `completed` or `failed`. */
